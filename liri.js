@@ -13,7 +13,7 @@ function songSearch(songName) {
       type: 'track',
       query: songName
     })
-    .then(function(data) {
+    .then(function(response) {
       try {
         fs.writeFileSync('results.json', JSON.stringify(response.data, null, 2));
       } catch (e) {
@@ -91,23 +91,64 @@ function bandEvents(bandName) {
     method: 'GET',
     url: `https://rest.bandsintown.com/artists/${bandName}/events?app_id=${Keys.bands.id}`
   }).then(function(response) {
-    try {
-      // index of the current event being 'browsed'
-      var i = 0;
-      var exitLoop = false;
-
-      function displayVenuInfo(current) {
-        console.log(`Venue: ${current.venue.name}`);
-        console.log(`Lineup: ${current.lineup.splice(0).join(", ")}`);
-        console.log(`Location: ${current.venue.city}, ${current.venue.region}, ${current.venue.country}`);
-        console.log(`Date: ${current.datetime}`);
-        fs.appendFileSync('events.json', JSON.stringify(current.data, null, 2));
-      }
-      displayVenuInfo(response.data[i]);
-    } catch (e) {
-      console.log(e);
+    function getStates(data) {
+      var allStates = [];
+      var output = [];
+      data.forEach(function(event) {
+        // canadian locations don't have regions, only city
+        if (event.venue.region === "") {
+          allStates.push(event.venue.city);
+        } else {
+          allStates.push(event.venue.region);
+        }
+      });
+      allStates.forEach(function(state) {
+        if (output.indexOf(state) === -1) {
+          output.push(state);
+        }
+      });
+      output = output.sort();
+      return output;
     }
+
+    function chooseState(response) {
+      console.log('choose state');
+      Inquirer
+        .prompt({
+          type: 'list',
+          message: `Select a state/region to view its upcoming ${bandName} venues:`,
+          choices: getStates(response.data),
+          name: 'region'
+        }).then(function(input) {
+          response.data.forEach(function(event) {
+            if (event.venue.region === input.region || event.venue.city === input.region) {
+              displayVenueInfo(event);
+            }
+          });
+          Inquirer
+            .prompt({
+              type: 'list',
+              choices: ['Back', 'Exit'],
+              name: 'next'
+            }).then(function(input) {
+              if (input.next === 'Back')
+                chooseState(response);
+            });
+        });
+    }
+    chooseState(response);
   });
+}
+
+function displayVenueInfo(current) {
+  try {
+    console.log(`Venue: ${current.venue.name}`);
+    console.log(`Lineup: ${current.lineup.splice(0).join(", ")}`);
+    console.log(`Location: ${current.venue.city}, ${current.venue.region}, ${current.venue.country}`);
+    console.log(`Date: ${current.datetime}`);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function bandPrompt() {
@@ -141,12 +182,12 @@ Inquirer
     }
   ]).then(function(input) {
     switch (input.action) {
-      case 'Song Information':
-        songPrompt();
-        break;
-
       case 'Band or Artist Information':
         bandPrompt();
+        break;
+
+      case 'Song Information':
+        songPrompt();
         break;
 
       case 'Movie Information':
