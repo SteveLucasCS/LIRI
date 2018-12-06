@@ -1,0 +1,27 @@
+{
+  "name": "LIRI",
+  "version": "1.0.0",
+  "description": "Allows user to search for songs, movies, and bands in town",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteveLucasCS/LIRI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteveLucasCS/LIRI/issues"
+  },
+  "homepage": "https://github.com/SteveLucasCS/LIRI#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.1.0",
+    "inquirer": "^6.2.1",
+    "moment": "^2.22.2",
+    "node-spotify-api": "^1.0.7"
+  }
+}
