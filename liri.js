@@ -390,10 +390,35 @@ function bandSearch(bandName) {
                 break;
             }
           });
-      } else {
+      } else if (response.data.upcoming_event_count > 0) {
         bandEvents(bandName);
+      } else {
+        console.log(`No Results Found.`);
+        console.log('\n');
+        inquirer
+          .prompt({
+            type: 'list',
+            message: 'Options:',
+            choices: ['Search Again', 'Main Menu', 'Exit'],
+            name: 'next'
+          }).then(function(input) {
+            switch (input.next) {
+              case 'Search Again':
+                bandPrompt();
+                break;
+
+              case 'Main Menu':
+                mainMenu();
+                break;
+
+              default:
+                onExit();
+                break;
+            }
+          });
       }
     } catch (e) {
+      console.log(e);
       errorsThrown.push(new Error('bandSearch', '', e));
     }
   });
