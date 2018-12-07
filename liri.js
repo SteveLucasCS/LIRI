@@ -608,4 +608,79 @@ function onExit() {
   }
 }
 
-mainMenu();
+function fromFile(filename) {
+  try {
+    fs.readFile(filename, 'utf8', function(e, data) {
+      if (e)
+        throw e;
+      console.log(data);
+    });
+  } catch (e) {
+    console.log(`Could not parse file '${filename}.`);
+    console.log(e);
+  }
+}
+
+/****************** Main Driver Functionality ******************/
+
+//Check for process arguments on initialization
+if (process.argv.length > 2) {
+  var command = process.argv[2];
+  var param = process.argv[3];
+  switch (command) {
+    case 'spotify-this-song':
+      switch (param) {
+        case null:
+        case undefined:
+        case '':
+          songPrompt();
+          break;
+        default:
+          searchSong(param);
+          break;
+      }
+      break;
+
+    case 'concert-this':
+      switch (param) {
+        case null:
+        case undefined:
+        case '':
+          bandPrompt();
+          break;
+        default:
+          bandSearch(param);
+          break;
+      }
+      break;
+
+    case 'movie-this':
+      switch (param) {
+        case null:
+        case undefined:
+        case '':
+          moviePrompt();
+          break;
+        default:
+          movieSearch(param);
+          break;
+      }
+      break;
+
+    case 'do-what-it-says':
+      switch (param) {
+        case null:
+        case undefined:
+        case '':
+          fromFile('random.txt');
+          break;
+        default:
+          fromFile(param);
+          break;
+      }
+    default:
+      mainMenu();
+  }
+} else {
+  mainMenu();
+}
