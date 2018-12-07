@@ -627,8 +627,25 @@ function fromFile(filename) {
 if (process.argv.length > 2) {
   var command = process.argv[2];
   var param = process.argv[3];
+
+  try {
+    command = command.toLowerCase();
+  } catch(e) {
+    param = process.argv[2];
+  }
+  try {
+    param = param.toLowerCase();
+  } catch(e) {
+    param = process.argv[3];
+  };
+  
   switch (command) {
+    case 'spotify this song':
     case 'spotify-this-song':
+    case 'search song':
+    case 'search-song':
+    case 'song-search':
+    case 'song search':
       switch (param) {
         case null:
         case undefined:
@@ -636,11 +653,15 @@ if (process.argv.length > 2) {
           songPrompt();
           break;
         default:
-          searchSong(param);
+          songSearch(param);
           break;
       }
       break;
-
+    case 'band search':
+    case 'band-search':
+    case 'concert-search':
+    case 'concert search':
+    case 'concert this':
     case 'concert-this':
       switch (param) {
         case null:
@@ -654,6 +675,11 @@ if (process.argv.length > 2) {
       }
       break;
 
+    case 'search movie':
+    case 'search-movie':
+    case 'movie-search':
+    case 'movie search':
+    case 'movie this':
     case 'movie-this':
       switch (param) {
         case null:
@@ -666,7 +692,11 @@ if (process.argv.length > 2) {
           break;
       }
       break;
-
+    case 'from file':
+    case 'from-file':
+    case 'from text':
+    case 'from-text':
+    case 'do what it says':
     case 'do-what-it-says':
       switch (param) {
         case null:
