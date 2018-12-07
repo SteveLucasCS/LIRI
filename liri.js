@@ -9,7 +9,7 @@ const fs = require('fs');
 const spotify = new Spotify(keys.spotify);
 
 /** Array of any error objects */
-var errorsThrown = [];
+var errorLog = [];
 
 function Error(source, code, message) {
   this.source = source;
@@ -26,7 +26,7 @@ function sendErrorLog() {
 
   var logText;
   try {
-    logText = JSON.stringify(errorsThrown, null, 1);
+    logText = JSON.stringify(errorLog, null, 1);
   } catch (e) {
     console.log(e);
   }
@@ -202,7 +202,7 @@ function songSearch(songName) {
     }).catch(function(e) {
       if (e.statusCode == 400) {
         console.log('\nSorry, the database cannot be accessed right now. Please try again later.');
-        errorsThrown.push(new Error('searchSong', '400', 'Spotify API Key Failed'));
+        errorLog.push(new Error('searchSong', '400', 'Spotify API Key Failed'));
       } else {
         console.log('\nSorry, No Results Found.\n');
       }
@@ -235,7 +235,7 @@ function displaySongInfo(track) {
   fs.appendFile('songResults.txt', JSON.stringify(track, null, 1), function(e) {
     if (e) {
       console.log(e);
-      errorsThrown.push('displayVenueInfo', '', e);
+      errorLog.push('displayVenueInfo', '', e);
     }
   });
   try {
@@ -255,7 +255,7 @@ function displaySongInfo(track) {
       ${link}`
     );
   } catch (e) {
-    errorsThrown.push('displaySongInfo', '', e);
+    errorLog.push('displaySongInfo', '', e);
   }
 }
 
@@ -319,14 +319,14 @@ function movieSearch(movieName) {
         default:
           console.log(`An Unkown Error has occured:`);
           try {
-            errorsThrown.push(new Error('movieSearch', e.response.status, e.response.statusText));
+            errorLog.push(new Error('movieSearch', e.response.status, e.response.statusText));
           } catch (e) {
-            errorsThrown.push(new Error('movieSearch', '', e.response));
+            errorLog.push(new Error('movieSearch', '', e.response));
           }
           break;
       }
     } else {
-      errorsThrown.push(new Error('movieSearch', '', e));
+      errorLog.push(new Error('movieSearch', '', e));
     }
   });
 }
@@ -335,7 +335,7 @@ function displayMovieInfo(movie) {
   fs.appendFile('moveResults.txt', JSON.stringify(movie, null, 1), function(e) {
     if (e) {
       console.log(e);
-      errorsThrown.push('displayVenueInfo', '', e);
+      errorLog.push('displayVenueInfo', '', e);
     }
   });
   try {
@@ -362,7 +362,7 @@ function displayMovieInfo(movie) {
   `);
   } catch (e) {
     console.log('An error occured when trying to display movie results.');
-    errorsThrown.push(new Error('displayMovieInfo', '', e));
+    errorLog.push(new Error('displayMovieInfo', '', e));
   }
 }
 
@@ -376,6 +376,7 @@ function moviePrompt() {
     }).then(function(input) {
       if (input.name === "" || input.name === undefined) {
         console.log('Invalid Input: Movie Name');
+        moviePrompt();
       } else {
         movieSearch(input.name);
       }
@@ -441,7 +442,7 @@ function bandSearch(bandName) {
       }
     } catch (e) {
       console.log(e);
-      errorsThrown.push(new Error('bandSearch', '', e));
+      errorLog.push(new Error('bandSearch', '', e));
     }
   });
 }
@@ -510,7 +511,7 @@ function bandEvents(bandName) {
               });
           });
       } catch (e) {
-        errorsThrown.push(new Error('chooseState', '', e));
+        errorLog.push(new Error('chooseState', '', e));
       }
     }
     chooseState(response);
@@ -521,7 +522,7 @@ function displayVenueInfo(current) {
   fs.appendFile('eventResults.txt', JSON.stringify(current, null, 1), function(e) {
     if (e) {
       console.log(e);
-      errorsThrown.push('displayVenueInfo', '', e);
+      errorLog.push('displayVenueInfo', '', e);
     }
   });
   try {
@@ -542,7 +543,7 @@ function displayVenueInfo(current) {
     console.log(`Time: ${time}`);
   } catch (e) {
     console.log(e);
-    errorsThrown.push('displayVenueInfo', '', e);
+    errorLog.push('displayVenueInfo', '', e);
   }
 }
 
@@ -556,11 +557,28 @@ function bandPrompt() {
     }).then(function(input) {
       if (input.name === "" || input.name === undefined) {
         console.log('Invalid Input: Band Name');
+        bandPrompt();
       } else {
         bandSearch(input.name);
       }
     });
 }
+
+function fromFile (filename) {
+  console.log('Searching...');
+  try {
+    var data = fs.readFileSync(filename, 'utf8')
+    data = data.split(',');
+    var command = data[0].replace(/\s/g, '');
+    var param = data[1];
+    fromArguments(command, param);
+  } catch (e) {
+    console.log(`Could not parse file '${filename}.`);
+    console.log(e);
+    errorLog.push((new Error('fromFile', '', e)));
+  }
+}
+
 
 
 function mainMenu() {
@@ -603,49 +621,22 @@ function mainMenu() {
 function onExit() {
   console.log('Thank you for using Liri!');
   console.log(`'Better than Siri, but that's not hard.'`);
-  if (errorsThrown.length > 0) {
+  if (errorLog.length > 0) {
     sendErrorLog();
   }
 }
 
-function fromFile(filename) {
-  try {
-    fs.readFile(filename, 'utf8', function(e, data) {
-      if (e)
-        throw e;
-      console.log(data);
-    });
-  } catch (e) {
-    console.log(`Could not parse file '${filename}.`);
-    console.log(e);
-  }
-}
-
-/****************** Main Driver Functionality ******************/
-
-//Check for process arguments on initialization
-if (process.argv.length > 2) {
-  var command = process.argv[2];
-  var param = process.argv[3];
-
-  try {
-    command = command.toLowerCase();
-  } catch(e) {
-    param = process.argv[2];
-  }
-  try {
-    param = param.toLowerCase();
-  } catch(e) {
-    param = process.argv[3];
-  };
-  
+function fromArguments(command, param) {
   switch (command) {
     case 'spotify this song':
     case 'spotify-this-song':
+    case 'spotifythissong':
     case 'search song':
     case 'search-song':
+    case 'searchsong':
     case 'song-search':
     case 'song search':
+    case 'songsearch':
       switch (param) {
         case null:
         case undefined:
@@ -659,10 +650,13 @@ if (process.argv.length > 2) {
       break;
     case 'band search':
     case 'band-search':
+    case 'bandsearch':
     case 'concert-search':
     case 'concert search':
+    case 'concertsearch':
     case 'concert this':
     case 'concert-this':
+    case 'concertthis':
       switch (param) {
         case null:
         case undefined:
@@ -674,13 +668,15 @@ if (process.argv.length > 2) {
           break;
       }
       break;
-
-    case 'search movie':
-    case 'search-movie':
-    case 'movie-search':
-    case 'movie search':
     case 'movie this':
     case 'movie-this':
+    case 'moviethis':
+    case 'search movie':
+    case 'search-movie':
+    case 'searchmovie':
+    case 'movie-search':
+    case 'movie search':
+    case 'moviesearch':
       switch (param) {
         case null:
         case undefined:
@@ -692,12 +688,15 @@ if (process.argv.length > 2) {
           break;
       }
       break;
-    case 'from file':
-    case 'from-file':
-    case 'from text':
-    case 'from-text':
     case 'do what it says':
     case 'do-what-it-says':
+    case 'dowhatitsays':
+    case 'from file':
+    case 'from-file':
+    case 'fromfile':
+    case 'from text':
+    case 'from-text':
+    case 'fromtext':
       switch (param) {
         case null:
         case undefined:
@@ -708,9 +707,34 @@ if (process.argv.length > 2) {
           fromFile(param);
           break;
       }
+      break;
     default:
       mainMenu();
+      break;
   }
+}
+
+/****************** Main Driver Functionality ******************/
+//Check for process arguments on initialization
+if (process.argv.length > 2) {
+  var command = process.argv[2];
+  var param = process.argv[3];
+  if (process.argv.length > 3) {
+    for (let i = 4; i < process.argv.length; i++) {
+      param = param.concat(' ', process.argv[i]);
+    }
+  }
+  try {
+    command = command.toLowerCase();
+  } catch (e) {
+    param = process.argv[2];
+  }
+  try {
+    param = param.toLowerCase();
+  } catch (e) {
+    param = process.argv[3];
+  };
+  fromArguments(command, param);
 } else {
   mainMenu();
 }

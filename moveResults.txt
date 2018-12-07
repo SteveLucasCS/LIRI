@@ -37,4 +37,172 @@
  "Production": "Paramount Pictures",
  "Website": "http://www.titanicmovie.com/",
  "Response": "True"
+}{
+ "Title": "Clear",
+ "Year": "2007",
+ "Rated": "N/A",
+ "Released": "N/A",
+ "Runtime": "74 min",
+ "Genre": "Drama, Sci-Fi",
+ "Director": "Eddie Lebron",
+ "Writer": "Eddie Lebron",
+ "Actors": "Sung-Mo Cho, Jun Naito, Elizabeth Lee, Dara Centonze",
+ "Plot": "In the year 2027 in the fictional city/state of Alpha City, Damon Yu, a brilliant loner, has finally reached the edge. With the conviction that people and modern society has reached a level...",
+ "Language": "English, Japanese",
+ "Country": "USA",
+ "Awards": "N/A",
+ "Poster": "N/A",
+ "Ratings": [
+  {
+   "Source": "Internet Movie Database",
+   "Value": "2.7/10"
+  }
+ ],
+ "Metascore": "N/A",
+ "imdbRating": "2.7",
+ "imdbVotes": "6",
+ "imdbID": "tt1464008",
+ "Type": "movie",
+ "DVD": "N/A",
+ "BoxOffice": "N/A",
+ "Production": "N/A",
+ "Website": "N/A",
+ "Response": "True"
+}{
+ "Title": "Titanic",
+ "Year": "1997",
+ "Rated": "PG-13",
+ "Released": "19 Dec 1997",
+ "Runtime": "194 min",
+ "Genre": "Drama, Romance",
+ "Director": "James Cameron",
+ "Writer": "James Cameron",
+ "Actors": "Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates",
+ "Plot": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+ "Language": "English, Swedish",
+ "Country": "USA",
+ "Awards": "Won 11 Oscars. Another 111 wins & 77 nominations.",
+ "Poster": "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+ "Ratings": [
+  {
+   "Source": "Internet Movie Database",
+   "Value": "7.8/10"
+  },
+  {
+   "Source": "Rotten Tomatoes",
+   "Value": "89%"
+  },
+  {
+   "Source": "Metacritic",
+   "Value": "75/100"
+  }
+ ],
+ "Metascore": "75",
+ "imdbRating": "7.8",
+ "imdbVotes": "919,766",
+ "imdbID": "tt0120338",
+ "Type": "movie",
+ "DVD": "10 Sep 2012",
+ "BoxOffice": "N/A",
+ "Production": "Paramount Pictures",
+ "Website": "http://www.titanicmovie.com/",
+ "Response": "True"
+}{
+ "Title": "Behzat Ç.: Bir Ankara Polisiyesi",
+ "Year": "2010–2013",
+ "Rated": "TV-14",
+ "Released": "19 Sep 2010",
+ "Runtime": "90 min",
+ "Genre": "Crime, Drama, Mystery",
+ "Director": "N/A",
+ "Writer": "N/A",
+ "Actors": "Erdal Besikçioglu, Fatih Artman, Inanç Konukçu, Seda Bakan",
+ "Plot": "Centered around a personally troubled, officially discredited police chief and his inharmonious police team in Ankara Police Force. Even though the show usually focuses on murders and other...",
+ "Language": "Turkish",
+ "Country": "Turkey",
+ "Awards": "N/A",
+ "Poster": "https://m.media-amazon.com/images/M/MV5BMmZkNDU1MzktNTY1OS00YzRmLTliOGYtM2UyNGYyYWNkYjc5XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+ "Ratings": [
+  {
+   "Source": "Internet Movie Database",
+   "Value": "8.7/10"
+  }
+ ],
+ "Metascore": "N/A",
+ "imdbRating": "8.7",
+ "imdbVotes": "22,106",
+ "imdbID": "tt1795096",
+ "Type": "series",
+ "totalSeasons": "3",
+ "Response": "True"
+}{
+ "Title": "Titanic",
+ "Year": "1997",
+ "Rated": "PG-13",
+ "Released": "19 Dec 1997",
+ "Runtime": "194 min",
+ "Genre": "Drama, Romance",
+ "Director": "James Cameron",
+ "Writer": "James Cameron",
+ "Actors": "Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates",
+ "Plot": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+ "Language": "English, Swedish",
+ "Country": "USA",
+ "Awards": "Won 11 Oscars. Another 111 wins & 77 nominations.",
+ "Poster": "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+ "Ratings": [
+  {
+   "Source": "Internet Movie Database",
+   "Value": "7.8/10"
+  },
+  {
+   "Source": "Rotten Tomatoes",
+   "Value": "89%"
+  },
+  {
+   "Source": "Metacritic",
+   "Value": "75/100"
+  }
+ ],
+ "Metascore": "75",
+ "imdbRating": "7.8",
+ "imdbVotes": "919,766",
+ "imdbID": "tt0120338",
+ "Type": "movie",
+ "DVD": "10 Sep 2012",
+ "BoxOffice": "N/A",
+ "Production": "Paramount Pictures",
+ "Website": "http://www.titanicmovie.com/",
+ "Response": "True"
+}{
+ "Title": "Clear",
+ "Year": "2007",
+ "Rated": "N/A",
+ "Released": "N/A",
+ "Runtime": "74 min",
+ "Genre": "Drama, Sci-Fi",
+ "Director": "Eddie Lebron",
+ "Writer": "Eddie Lebron",
+ "Actors": "Sung-Mo Cho, Jun Naito, Elizabeth Lee, Dara Centonze",
+ "Plot": "In the year 2027 in the fictional city/state of Alpha City, Damon Yu, a brilliant loner, has finally reached the edge. With the conviction that people and modern society has reached a level...",
+ "Language": "English, Japanese",
+ "Country": "USA",
+ "Awards": "N/A",
+ "Poster": "N/A",
+ "Ratings": [
+  {
+   "Source": "Internet Movie Database",
+   "Value": "2.7/10"
+  }
+ ],
+ "Metascore": "N/A",
+ "imdbRating": "2.7",
+ "imdbVotes": "6",
+ "imdbID": "tt1464008",
+ "Type": "movie",
+ "DVD": "N/A",
+ "BoxOffice": "N/A",
+ "Production": "N/A",
+ "Website": "N/A",
+ "Response": "True"
 }
