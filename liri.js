@@ -231,21 +231,32 @@ function songSearch(songName) {
 }
 
 function displaySongInfo(track) {
-  var song = track.name;
-  var artist = track.artists[0].name;
-  var album = track.album.name;
-  var released = moment(track.album.release_date, 'YYYY-MM-DD');
-  released = released.format('dddd, MMMM Do YYYY');
-  var link = track.external_urls.spotify;
-  console.log('\n');
-  console.log(
-    `${song}
+
+  fs.appendFile('songResults.txt', JSON.stringify(track, null, 1), function(e) {
+    if (e) {
+      console.log(e);
+      errorsThrown.push('displayVenueInfo', '', e);
+    }
+  });
+  try {
+    var song = track.name;
+    var artist = track.artists[0].name;
+    var album = track.album.name;
+    var released = moment(track.album.release_date, 'YYYY-MM-DD');
+    released = released.format('dddd, MMMM Do YYYY');
+    var link = track.external_urls.spotify;
+    console.log('\n');
+    console.log(
+      `${song}
     Artist: ${artist}
     Album: ${album}
     Released: ${released}
     Spotify Webplayer Link:
       ${link}`
-  );
+    );
+  } catch (e) {
+    errorsThrown.push('displaySongInfo', '', e);
+  }
 }
 
 function songPrompt() {
@@ -321,18 +332,25 @@ function movieSearch(movieName) {
 }
 
 function displayMovieInfo(movie) {
-  var released = moment(movie.Released, 'DD MMM YYYY');
-  released = released.format('MM/DD/YYYY');
-  console.log(
-    `  ${movie.Title}
+  fs.appendFile('moveResults.txt', JSON.stringify(movie, null, 1), function(e) {
+    if (e) {
+      console.log(e);
+      errorsThrown.push('displayVenueInfo', '', e);
+    }
+  });
+  try {
+    var released = moment(movie.Released, 'DD MMM YYYY');
+    released = released.format('MM/DD/YYYY');
+    console.log(
+      `  ${movie.Title}
     Rated: ${movie.Rated}
     Released: ${released}
     Reviews:
   `);
-  for (var i = 0; i < movie.Ratings.length; i++) {
-    console.log(`    ${movie.Ratings[i].Source}: ${movie.Ratings[i].Value}`);
-  }
-  console.log(`
+    for (var i = 0; i < movie.Ratings.length; i++) {
+      console.log(`    ${movie.Ratings[i].Source}: ${movie.Ratings[i].Value}`);
+    }
+    console.log(`
     Starring Actors: ${movie.Actors}
     Writers: ${movie.Writer}
     Director: ${movie.Director}
@@ -342,6 +360,10 @@ function displayMovieInfo(movie) {
     Country of Origin: ${movie.Country}
     Language: ${movie.Language}
   `);
+  } catch (e) {
+    console.log('An error occured when trying to display movie results.');
+    errorsThrown.push(new Error('displayMovieInfo', '', e));
+  }
 }
 
 function moviePrompt() {
@@ -496,6 +518,12 @@ function bandEvents(bandName) {
 }
 
 function displayVenueInfo(current) {
+  fs.appendFile('eventResults.txt', JSON.stringify(current, null, 1), function(e) {
+    if (e) {
+      console.log(e);
+      errorsThrown.push('displayVenueInfo', '', e);
+    }
+  });
   try {
     var dt = current.datetime;
     dt = dt.split('T');
@@ -513,7 +541,8 @@ function displayVenueInfo(current) {
     console.log(`Date: ${date}`);
     console.log(`Time: ${time}`);
   } catch (e) {
-    errorsThrown.push(new Error('displayVenueInfo', '', e))
+    console.log(e);
+    errorsThrown.push('displayVenueInfo', '', e);
   }
 }
 
