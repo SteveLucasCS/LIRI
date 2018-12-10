@@ -332,7 +332,7 @@ function movieSearch(movieName) {
 }
 
 function displayMovieInfo(movie) {
-  fs.appendFile('moveResults.txt', JSON.stringify(movie, null, 1), function(e) {
+  fs.appendFile('movieResults.txt', JSON.stringify(movie, null, 1), function(e) {
     if (e) {
       console.log(e);
       errorLog.push('displayVenueInfo', '', e);

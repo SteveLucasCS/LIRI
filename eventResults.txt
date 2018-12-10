@@ -158,4 +158,269 @@
  "id": "100456886",
  "artist_id": "1120421",
  "url": "https://www.bandsintown.com/e/100456886?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/100456911?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  },
+  {
+   "type": "VIP",
+   "url": "https://www.bandsintown.com/t/100456911?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "Talking Stick Resort Arena",
+  "country": "United States",
+  "region": "AZ",
+  "city": "Phoenix",
+  "latitude": "33.4528292",
+  "longitude": "-112.0685027"
+ },
+ "datetime": "2019-05-14T19:00:11",
+ "on_sale_datetime": "2018-11-02T10:00:00",
+ "description": "",
+ "lineup": [
+  "Ariana Grande",
+  "Normani Kordei",
+  "Social House"
+ ],
+ "id": "100456911",
+ "artist_id": "1120421",
+ "url": "https://www.bandsintown.com/e/100456911?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/100456897?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  },
+  {
+   "type": "VIP",
+   "url": "https://www.bandsintown.com/t/100456897?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "SAP Center",
+  "country": "United States",
+  "region": "CA",
+  "city": "San Jose",
+  "latitude": "37.33266390000001",
+  "longitude": "-121.8918364"
+ },
+ "datetime": "2019-05-02T19:00:37",
+ "on_sale_datetime": "2018-11-02T10:00:00",
+ "description": "",
+ "lineup": [
+  "Ariana Grande",
+  "Normani Kordei",
+  "Social House"
+ ],
+ "id": "100456897",
+ "artist_id": "1120421",
+ "url": "https://www.bandsintown.com/e/100456897?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/100456898?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  },
+  {
+   "type": "VIP",
+   "url": "https://www.bandsintown.com/t/100456898?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "Golden 1 Center",
+  "country": "United States",
+  "region": "CA",
+  "city": "Sacramento",
+  "latitude": "38.58157189999999",
+  "longitude": "-121.4943996"
+ },
+ "datetime": "2019-05-03T19:00:07",
+ "on_sale_datetime": "2018-11-02T10:00:00",
+ "description": "",
+ "lineup": [
+  "Ariana Grande",
+  "Normani Kordei",
+  "Social House"
+ ],
+ "id": "100456898",
+ "artist_id": "1120421",
+ "url": "https://www.bandsintown.com/e/100456898?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/100456900?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  },
+  {
+   "type": "VIP",
+   "url": "https://www.bandsintown.com/t/100456900?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "STAPLES Center",
+  "country": "United States",
+  "region": "CA",
+  "city": "Los Angeles",
+  "latitude": "34.0390107",
+  "longitude": "-118.2672801"
+ },
+ "datetime": "2019-05-06T19:00:33",
+ "on_sale_datetime": "2018-11-02T10:00:00",
+ "description": "",
+ "lineup": [
+  "Ariana Grande",
+  "Normani Kordei",
+  "Social House"
+ ],
+ "id": "100456900",
+ "artist_id": "1120421",
+ "url": "https://www.bandsintown.com/e/100456900?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/100456903?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  },
+  {
+   "type": "VIP",
+   "url": "https://www.bandsintown.com/t/100456903?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "The Forum",
+  "country": "United States",
+  "region": "CA",
+  "city": "Los Angeles",
+  "latitude": "34.0522342",
+  "longitude": "-118.2436849"
+ },
+ "datetime": "2019-05-10T19:00:30",
+ "on_sale_datetime": "2018-11-02T10:00:00",
+ "description": "",
+ "lineup": [
+  "Ariana Grande",
+  "Normani Kordei",
+  "Social House"
+ ],
+ "id": "100456903",
+ "artist_id": "1120421",
+ "url": "https://www.bandsintown.com/e/100456903?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/100456892?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  },
+  {
+   "type": "VIP",
+   "url": "https://www.bandsintown.com/t/100456892?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "Rogers Place",
+  "country": "Canada",
+  "region": "",
+  "city": "Edmonton",
+  "latitude": "53.54866140000001",
+  "longitude": "-113.5033349"
+ },
+ "datetime": "2019-04-25T19:00:16",
+ "on_sale_datetime": "2018-11-02T10:00:00",
+ "description": "",
+ "lineup": [
+  "Ariana Grande",
+  "Normani Kordei",
+  "Social House"
+ ],
+ "id": "100456892",
+ "artist_id": "1120421",
+ "url": "https://www.bandsintown.com/e/100456892?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/1010848485?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "Paramount Theatre",
+  "country": "United States",
+  "region": "CO",
+  "city": "Denver",
+  "latitude": "39.744207",
+  "longitude": "-104.990223"
+ },
+ "datetime": "2018-12-13T20:00:00",
+ "on_sale_datetime": "2018-07-14T10:00:00",
+ "description": "Daughtry",
+ "lineup": [
+  "Daughtry"
+ ],
+ "id": "1010848485",
+ "artist_id": "220",
+ "url": "https://www.bandsintown.com/e/1010848485?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/1010848485?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "Paramount Theatre",
+  "country": "United States",
+  "region": "CO",
+  "city": "Denver",
+  "latitude": "39.744207",
+  "longitude": "-104.990223"
+ },
+ "datetime": "2018-12-13T20:00:00",
+ "on_sale_datetime": "2018-07-14T10:00:00",
+ "description": "Daughtry",
+ "lineup": [],
+ "id": "1010848485",
+ "artist_id": "220",
+ "url": "https://www.bandsintown.com/e/1010848485?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+}{
+ "offers": [
+  {
+   "type": "Tickets",
+   "url": "https://www.bandsintown.com/t/1010848288?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+   "status": "available"
+  }
+ ],
+ "venue": {
+  "name": "Copernicus Center",
+  "country": "United States",
+  "region": "IL",
+  "city": "Chicago",
+  "latitude": "41.968069",
+  "longitude": "-87.75861400000002"
+ },
+ "datetime": "2018-12-07T20:00:00",
+ "on_sale_datetime": "2018-07-20T10:00:00",
+ "description": "DAUGHTRY – CAGE TO RATTLE TOUR",
+ "lineup": [
+  "Daughtry"
+ ],
+ "id": "1010848288",
+ "artist_id": "220",
+ "url": "https://www.bandsintown.com/e/1010848288?app_id=8cb7394ff2e0ba9a06a0acee8d812d4&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
 }
